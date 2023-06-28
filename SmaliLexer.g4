@@ -71,6 +71,7 @@ CLASS_DIRECTIVE:                '.class';
 SOURCE_DIRECTIVE:               '.source';
 SUPER_DIRECTIVE:                '.super';
 FIELD_DIRECTIVE:                '.field';
+FIELD_END_DIRECTIVE:            '.end field';
 REGISTERS_DIRECTIVE:            '.registers';
 LOCALS_DIRECTIVE:               '.locals';
 PARAM_DIRECTIVE:                '.param';

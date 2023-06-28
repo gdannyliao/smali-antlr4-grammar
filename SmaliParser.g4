@@ -26,6 +26,9 @@ options {
 	tokenVocab=SmaliLexer;
 }
 
+parse:
+    statement+
+    ;
 // Helpers
 
 registerIdentifier:             IDENTIFIER;
@@ -944,7 +947,7 @@ fieldType:                  anyType;
 
 fieldNameAndType:           fieldName COLON fieldType;
 
-fieldDirective:             FIELD_DIRECTIVE fieldModifier* fieldNameAndType (ASSIGN assignableValue)?;
+fieldDirective:             FIELD_DIRECTIVE fieldModifier* fieldNameAndType (ASSIGN assignableValue)? annotationDirective? (FIELD_END_DIRECTIVE)?;
 
 className:                  referenceType;
 
@@ -1066,8 +1069,4 @@ statement:
     | sourceDirective
     | fieldDirective
     | methodDirective
-    ;
-
-parse:
-    statement+
     ;
